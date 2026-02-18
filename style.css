@@ -1,6 +1,11 @@
 /* ========== Global styles ========== */
 
+html {
+  overflow-x: hidden; /* prevent horizontal scroll from full-width wave separators */
+}
+
 body {
+  margin: 0;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -60,6 +65,9 @@ li {
   display: block;
   width: 100vw;
   max-width: 100%;
+  margin-left: calc(50% - 50vw);
+  line-height: 0;
+  overflow: hidden;
   background-color: #eef7e0;
 }
 
@@ -74,6 +82,9 @@ li {
   display: block;
   width: 100vw;
   max-width: 100%;
+  margin-left: calc(50% - 50vw);
+  line-height: 0;
+  overflow: hidden;
   background-color: #d2dcb6;
 }
 
@@ -88,6 +99,9 @@ li {
   display: block;
   width: 100vw;
   max-width: 100%;
+  margin-left: calc(50% - 50vw);
+  line-height: 0;
+  overflow: hidden;
   background-color: #a1bc98;
 }
 
@@ -102,6 +116,9 @@ li {
   display: block;
   width: 100vw;
   max-width: 100%;
+  margin-left: calc(50% - 50vw);
+  line-height: 0;
+  overflow: hidden;
   position: relative;
   z-index: 2;
   margin-bottom: -2rem;
@@ -118,6 +135,9 @@ li {
   display: block;
   width: 100vw;
   max-width: 100%;
+  margin-left: calc(50% - 50vw);
+  line-height: 0;
+  overflow: hidden;
   position: relative;
   z-index: 3;
   margin-top: -2rem;
