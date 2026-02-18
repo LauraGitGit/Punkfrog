@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry Form</title>
+    <link rel="stylesheet" href="./enquiry-form.css">
+</head>
+
+<body>
+    <div>
+        <button type="button" id="close-enquiry-form">
+            Close
+        </button>
+    </div>
+    <div class="enquiry-form-container">
+        <img src="./Images/PF-logo-Color/pfLogo_L.png" class="enquiry-form-logo" alt="Punkfrog logo">
+
+        <form class="enquiry-form" method="post">
+            <label for="name">Name</label>
+            <span class="input-icon" aria-hidden="true">
+                <img src="" alt="name icon"> </span>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="email">Email</label>
+            <span class="input-icon" aria-hidden="true">
+                <img src="" alt="email icon"> </span>
+            <input type="email" id="email" name="email" placeholder="email@example.com" required>
+
+            <label for="subject">Subject</label>
+            <span class="input-icon" aria-hidden="true">
+                <img src="" alt="subject icon"> </span>
+            <input type="text" id="subject" name="subject" placeholder="What is this regarding?">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your enquiry" required></textarea>
+
+            <button type="submit">
+                <img src="" class="send-icon" aria-hidden="true" alt="Enquiry send icon">
+                <span>Send</span>
+            </button>
+
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

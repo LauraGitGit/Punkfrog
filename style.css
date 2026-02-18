@@ -1,1 +1,595 @@
+/* ========== Global styles ========== */
 
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+li {
+  list-style: none;
+}
+
+#tech-services-section,
+#business-consulting-section,
+#production-section,
+#catering-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#tech-services-section h2,
+#business-consulting-section h2 {
+  color: #4a4a5a;
+  font-family: Inter;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 48px; /* 100% */
+  letter-spacing: 0.7px;
+}
+
+/* ========== Section title container ========== */
+.section-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.section-underline {
+  margin-top: -1.3rem;
+  height: 3px;
+}
+
+.section-description {
+  font-size: 1.2rem;
+}
+
+/* ========== Enquiry button ========== */
+.enquiry-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.5rem 2rem;
+  background-color: rgb(36 145 36 / 99%);
+  color: #ffffff;
+  border: none;
+  border-radius: 19px;
+  font-size: 1rem;
+  font-weight: 550;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Only enquiry buttons inside <main> get extra top margin (not the hero button in the header) */
+main .enquiry-button {
+  margin: 3rem 0;
+}
+
+.enquiry-button:hover {
+  background-color: #1f571f;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.08);
+}
+
+.enquiry-button-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.enquiry-button span {
+  text-align: center;
+}
+
+/* ========== Hero Section styles ========== */
+#hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+  padding: 5rem 2rem;
+  background-color: #eef7e0;
+}
+
+#hero-section .logo {
+  margin-top: 5rem;
+  width: 300px;
+}
+
+.business-lines-container {
+  display: flex;
+  justify-content: center;
+}
+
+.business-lines-container ul {
+  display: flex;
+  gap: 6rem;
+  padding: 0;
+  margin: 0;
+}
+
+.business-line a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #1a1a1a;
+  padding: 1rem;
+}
+
+.business-line a:hover,
+.business-line-icon:hover {
+  transform: scale(1.05);
+}
+
+.business-line-icon {
+  width: 60px;
+  height: 64px;
+  padding: 0.8rem;
+}
+
+/* ========== Technical Services section styles========== */
+#tech-services-section {
+  background-color: #d2dcb6;
+  gap: 2rem;
+}
+
+.tech-services-content-container {
+  display: flex;
+  flex-direction: row;
+  gap: 6rem;
+}
+
+.tech-service-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 180px;
+  height: 180px;
+  border-radius: 16px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.tech-service-icon-container:hover {
+  transform: scale(1.05);
+}
+
+.tech-service-icon-container[aria-label="Riak"] {
+  background: #f2f4f7;
+}
+
+.tech-service-icon-container[aria-label="Erlang"] {
+  background: rgba(252, 241, 236, 0.71);
+}
+
+.tech-service-icon-container[aria-label="Rabbit MQ"] {
+  background: #fff7ed;
+}
+
+.tech-service-icon-container[aria-label="Elixir"] {
+  background: rgba(233, 236, 249, 0.77);
+}
+
+.tech-service-icon-container img {
+  height: 64px;
+}
+
+.tech-service-icon-container span {
+  font-size: 1rem;
+  color: #3d4c67;
+}
+
+/* ========== Business Consulting section styles ========== */
+
+#business-consulting-section {
+  background-color: #a1bc98;
+  gap: 2rem;
+}
+
+#business-consulting-section.layout-panel-active .business-consulting-layout {
+  justify-content: flex-start;
+}
+
+.business-consulting-layout {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.business-consulting-content-container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.business-consulting-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.consulting-item {
+  cursor: pointer;
+}
+
+.business-consulting-icon-box {
+  display: flex;
+  padding: 1.1rem;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 4px 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Hover state on icon box */
+.consulting-item:hover .business-consulting-icon-box {
+  background-color: #7a9b6e;
+}
+.consulting-item:hover .business-consulting-icon-box img {
+  filter: brightness(0) invert(1);
+}
+
+.business-consulting-icon-box img {
+  width: 56px;
+  height: 56px;
+  transition: filter 0.2s ease;
+}
+
+/* Slide-in detail panel (right side) */
+.business-consulting-detail-panel {
+  position: absolute;
+  right: 0;
+  width: 320px;
+  min-height: 150px;
+  padding: 1.5rem 1.75rem;
+  background-color: #8fa882;
+  border-radius: 16px;
+  box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition:
+    transform 0.3s ease,
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+  z-index: 10;
+}
+
+.business-consulting-detail-panel.is-visible {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.consulting-panel-title {
+  margin: 0 0 1rem 0;
+}
+
+.consulting-panel-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.consulting-panel-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.consulting-panel-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #49763b;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* ========== Production section styles ========== */
+
+#production-section {
+  background-color: #778873;
+}
+
+#production-section .section-title-container h2 {
+  color: #e7e7e7;
+  font-family: Broadway;
+  font-size: 43px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 72px;
+  letter-spacing: 14.752px;
+}
+/* Only "Punkfrog" gets this color; "Productions" stays default */
+#production-section .production-title-brand {
+  color: rgba(71, 71, 71, 0.85);
+}
+
+.production-content-container {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.production-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.production-content img {
+  width: 250px;
+  height: 350px;
+  border-radius: 25px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.production-content-container li:nth-child(2) img {
+  object-position: 16% 50%;
+  object-fit: cover;
+}
+
+.production-content:hover {
+  transform: scale(1.05);
+}
+
+/* ========== Catering section styles ========== */
+#catering-section {
+  position: relative;
+  background-image: url(./Images/cc-palm-tree.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 8rem 1.5rem 0;
+}
+
+#catering-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.25) 40%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+#catering-section .catering-section-inner {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+}
+
+/* Title block */
+.catering-title-container {
+  padding: 1.5rem 2.5rem 2rem;
+  margin-bottom: 6rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+#catering-section .catering-headline {
+  color: #ffffff;
+  font-size: clamp(2rem, 5vw, 48px);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.catering-headline-celebes {
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.catering-headline-catering {
+  letter-spacing: 0.12em;
+}
+
+.catering-underline {
+  margin-top: 0.2rem;
+}
+
+.catering-tagline {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  margin: 1rem 0 0;
+  max-width: 420px;
+  text-align: center;
+}
+
+/* ========== Food carousel ========== */
+
+/* Carousel container */
+.food-carousel-wrapper {
+  width: 100%;
+}
+
+/* catergory carousel edge fades effect*/
+.food-carousel-wrapper::before,
+.food-carousel-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+}
+
+.food-carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
+}
+
+.food-carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.4), transparent);
+}
+
+.food-carousel-track {
+  display: flex;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+
+/* Inner: holds duplicated items and is animated for infinite auto-scroll */
+.food-carousel-track-inner {
+  display: flex;
+  gap: 1.25rem;
+  padding: 0 0.5rem;
+  width: max-content;
+  animation: carousel-scroll-left 45s linear infinite;
+}
+
+.food-carousel-bottom-line .food-carousel-track-inner {
+  animation: carousel-scroll-right 50s linear infinite;
+}
+
+/* Pause auto-scroll when hovering over any item in the carousel */
+.food-carousel-wrapper:hover .food-carousel-track-inner {
+  animation-play-state: paused;
+}
+
+@keyframes carousel-scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes carousel-scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Scroll for more, no need for auto-scroll
+.food-carousel-scroll-hint {
+  float: right;
+  margin-right: 1rem;
+  color: #d9ccbb;
+} */
+
+.food-carousel-item {
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.food-carousel-item img {
+  display: block;
+  width: 180px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.food-carousel-item:hover img {
+  transform: scale(1.08);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.catering-enquiry-button {
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+}
+
+/* ============footer section styles ========== */
+footer {
+  background-color: #717863;
+}
+
+.footer-content-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 4rem;
+  padding: 2.5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  margin-right: 7rem;
+}
+
+/* Contact row: icon in green box + text */
+.footer-contact-container {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-contact-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4caf50;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.footer-contact-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-contact-text {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+}
+
+/* Dotted separator between top and bottom */
+.footer-separator {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px dotted rgba(224, 224, 224, 0.5);
+}
+
+.footer-copyright-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1.5rem 0.8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 0.8rem;
+  color: #403f3c;
+}

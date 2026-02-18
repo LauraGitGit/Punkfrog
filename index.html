@@ -1,44 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Punk Frog</title>
+    <title>Punkfrog</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <div class="header">
-            <img src="./assets/logo.png" class="logo" alt="Punk Frog">
-            <ul class="nav-links">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Consulting</a></li>
-                <li><a href="#">Catering</a></li>
-                <li><a href="#">Production</a></li>
-                <li><a href="#">Contact</a></li>
+    <!-- ========================================== Hero Section ========================================== -->
+    <header id="hero-section">
+        <img src="./Images/PF-logo-Color/pfLogo_XL.png" class="logo" alt="Punkfrog logo">
+
+        <nav class="business-lines-container" aria-label="Main business areas">
+            <ul>
+                <li class="business-line">
+                    <a href="#tech-services-section">
+                        <img src="./Images/business-lines-icons/technical-service.png" class="business-line-icon"
+                            alt="Technical Services">
+                        <span>Technical Services</span></a>
+                </li>
+                <li class="business-line">
+                    <a href="#business-consulting-section">
+                        <img src="./Images/business-lines-icons/consulting.png" class="business-line-icon"
+                            alt="Business Consulting">
+                        <span>Business Consulting</span></a>
+                </li>
+                <li class="business-line">
+                    <a href="#catering-section">
+                        <img src="./Images/business-lines-icons/catering.png" class="business-line-icon" alt="Catering">
+                        <span>Celebes Catering</span></a>
+                </li>
+                <li class="business-line">
+                    <a href="#production-section">
+                        <img src="./Images/business-lines-icons/pf-production.png" class="business-line-icon"
+                            alt="Production">
+                        <span>Punkfrog Productions</span></a>
+                </li>
             </ul>
-        </div>
+        </nav>
+
+        <!-- use js later to open the enquiry form -->
+        <button type="button" class="enquiry-button" aria-controls="enquiry-form">
+            <img src="./Images/Enquiry-button-icon.svg" class="enquiry-button-icon" alt="Enquiry button icon">
+            <span>Enquiry</span>
+        </button>
+    </header>
+
+    <main>
+        <!-- ====================================== Technical Services section ====================================== -->
+        <section id="tech-services-section">
+            <div class="section-title-container">
+                <h2>Technical Services</h2>
+                <img src="./Images/section-title-underline.svg" class="section-underline" alt="Section title underline">
+                <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
+            </div>
+            <!-- Technical services content container -->
+            <div class="tech-services-content-container">
+                <li>
+                    <div class="tech-service-icon-container" aria-label="Riak">
+                        <img src="./Images/Tec-service-icons/riak-logo.png" alt="Riak logo">
+                        <span>Riak</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="tech-service-icon-container" aria-label="Erlang">
+                        <img src="./Images/Tec-service-icons/erlang-logo.png" alt="Erlang logo">
+                        <span>Erlang</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="tech-service-icon-container" aria-label="Rabbit MQ">
+                        <img src="./Images/Tec-service-icons/rabbitMQ-logo.png" alt="Rabbit MQ logo">
+                        <span>Rabbit MQ</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="tech-service-icon-container" aria-label="Elixir">
+                        <img src="./Images/Tec-service-icons/Elixir-logo.png" alt="Elixir logo">
+                        <span>Elixir</span>
+                    </div>
+                </li>
+            </div>
+
+            <button type="button" class="enquiry-button" aria-controls="enquiry-form">
+                <img src="./Images/Enquiry-button-icon.svg" class="enquiry-button-icon" alt="Enquiry button icon">
+                <span>Enquiry</span>
+            </button>
+
+        </section>
+
+        <!-- ====================================== Business Consulting section ======================================= -->
+        <section id="business-consulting-section">
+            <div class="section-title-container">
+                <h2>Business Consulting</h2>
+                <img src="./Images/section-title-underline.svg" class="section-underline" alt="Section title underline">
+                <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
+            </div>
+
+            <div class="business-consulting-layout">
+                <div class="business-consulting-content-container">
+                    <li class="consulting-item" data-panel-title="Product & Market Strategy"
+                        data-panel-items="xxx,xxx,xxx">
+                        <div class="business-consulting-icon">
+                            <div class="business-consulting-icon-box">
+                                <img src="./Images/Business-consulting-icons/Product-Market-strategy.svg"
+                                    alt="Product & Market Strategy">
+                            </div>
+                            <span>Product & Market Strategy</span>
+                        </div>
+                    </li>
+                    <li class="consulting-item" data-panel-title="Business Analysis"
+                        data-panel-items="Data review,Process mapping,Recommendations">
+                        <div class="business-consulting-icon">
+                            <div class="business-consulting-icon-box">
+                                <img src="./Images/Business-consulting-icons/Business-analysis.svg"
+                                    alt="Business Analysis">
+                            </div>
+                            <span>Business Analysis</span>
+                        </div>
+                    </li>
+                    <li class="consulting-item" data-panel-title="Sales & BD"
+                        data-panel-items="Lead generation,Partnership development,Revenue growth">
+                        <div class="business-consulting-icon">
+                            <div class="business-consulting-icon-box">
+                                <img src="./Images/Business-consulting-icons/sales-bd.svg" alt="Sales & BD">
+                            </div>
+                            <span>Sales & BD</span>
+                        </div>
+                    </li>
+                    <li class="consulting-item" data-panel-title="Project Management"
+                        data-panel-items="Planning & scheduling,Resource allocation,Delivery">
+                        <div class="business-consulting-icon">
+                            <div class="business-consulting-icon-box">
+                                <img src="./Images/Business-consulting-icons/project-management.svg"
+                                    alt="Project Management">
+                            </div>
+                            <span>Project Management</span>
+                        </div>
+                    </li>
+                    <li class="consulting-item" data-panel-title="Business Communications"
+                        data-panel-items="Internal comms,External messaging,Stakeholder updates">
+                        <div class="business-consulting-icon">
+                            <div class="business-consulting-icon-box">
+                                <img src="./Images/Business-consulting-icons/business-communications.svg"
+                                    alt="Business Communication">
+                            </div>
+                            <span>Business Communication</span>
+                        </div>
+                    </li>
+                    <li class="consulting-item" data-panel-title="Continuous Improvement"
+                        data-panel-items="Lean methods,Feedback loops,Iteration">
+                        <div class="business-consulting-icon">
+                            <div class="business-consulting-icon-box">
+                                <img src="./Images/Business-consulting-icons/contineous-improvment.svg"
+                                    alt="Continuous Improvement">
+                            </div>
+                            <span>Continuous Improvement</span>
+                        </div>
+                    </li>
+                </div>
+
+                <aside class="business-consulting-detail-panel" id="consulting-detail-panel" aria-hidden="true">
+                    <h3 class="consulting-panel-title" id="consulting-panel-title"></h3>
+                    <ul class="consulting-panel-list" id="consulting-panel-list"></ul>
+                </aside>
+            </div>
+
+            <button type="button" class="enquiry-button" aria-controls="enquiry-form">
+                <img src="./Images/Enquiry-button-icon.svg" class="enquiry-button-icon" alt="Enquiry button icon">
+                <span>Enquiry</span>
+            </button>
+        </section>
+
+        <!-- ========================================= Production section ========================================= -->
+        <section id="production-section">
+            <div class="section-title-container">
+                <h2><span class="production-title-brand">Punkfrog</span> Productions</h2>
+                <img src="./Images/section-title-underline.svg" class="section-underline" alt="Section title underline">
+                <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
+            </div>
+
+            <div class="production-content-container">
+                <li>
+                    <div class="production-content">
+                        <img src="./Images/Production-pictures/Piano-photo.jpg" alt="A piano player">
+                        <span>Piano entertainer</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="production-content">
+                        <img src="./Images/Production-pictures/jan_olsson.jpg" alt="A public speaker">
+                        <span>CyberSecurity speaker</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="production-content">
+                        <img src="./Images/Production-pictures/Wayland-handbill.png" alt="A man playing a guitar">
+                        <span>Wayland the barb</span>
+                    </div>
+                </li>
+            </div>
+
+            <button type="button" class="enquiry-button" aria-controls="enquiry-form">
+                <img src="./Images/Enquiry-button-icon.svg" class="enquiry-button-icon" alt="Enquiry button icon">
+                <span>Enquiry</span>
+            </button>
+        </section>
+
+        <!-- ========================================== Catering section ========================================== -->
+        <section id="catering-section">
+            <div class="catering-section-inner">
+                <div class="section-title-container catering-title-container">
+                    <h2 class="catering-headline"><span class="catering-headline-celebes">Celebes</span> <span
+                            class="catering-headline-catering">Catering</span></h2>
+                    <img src="./Images/section-title-underline.svg" class="section-underline catering-underline" alt="">
+                    <p class="catering-tagline">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+                        consectetur, adipisci velit..."</p>
+                </div>
+
+                <!-- Food carousel: replace each img src with your own photo -->
+                <div class="food-carousel-wrapper food-carousel-container" aria-label="Food gallery">
+                    <div class="food-carousel-track food-carousel-top-line">
+                        <div class="food-carousel-track-inner">
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 1%3C/text%3E%3C/svg%3E"
+                                    alt="Food 1"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 2%3C/text%3E%3C/svg%3E"
+                                    alt="Food 2"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 3%3C/text%3E%3C/svg%3E"
+                                    alt="Food 3"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 4%3C/text%3E%3C/svg%3E"
+                                    alt="Food 4"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 5%3C/text%3E%3C/svg%3E"
+                                    alt="Food 5"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 6%3C/text%3E%3C/svg%3E"
+                                    alt="Food 6"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 7%3C/text%3E%3C/svg%3E"
+                                    alt="Food 7"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 8%3C/text%3E%3C/svg%3E"
+                                    alt="Food 8"></div>
+                            <!-- duplicate for seamless loop -->
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 1%3C/text%3E%3C/svg%3E"
+                                    alt="Food 1"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 2%3C/text%3E%3C/svg%3E"
+                                    alt="Food 2"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 3%3C/text%3E%3C/svg%3E"
+                                    alt="Food 3"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 4%3C/text%3E%3C/svg%3E"
+                                    alt="Food 4"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 5%3C/text%3E%3C/svg%3E"
+                                    alt="Food 5"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 6%3C/text%3E%3C/svg%3E"
+                                    alt="Food 6"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 7%3C/text%3E%3C/svg%3E"
+                                    alt="Food 7"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 8%3C/text%3E%3C/svg%3E"
+                                    alt="Food 8"></div>
+                        </div>
+                    </div>
+                    <div class="food-carousel-track food-carousel-bottom-line">
+                        <div class="food-carousel-track-inner">
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 9%3C/text%3E%3C/svg%3E"
+                                    alt="Food 9"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 10%3C/text%3E%3C/svg%3E"
+                                    alt="Food 10"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 11%3C/text%3E%3C/svg%3E"
+                                    alt="Food 11"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 12%3C/text%3E%3C/svg%3E"
+                                    alt="Food 12"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 13%3C/text%3E%3C/svg%3E"
+                                    alt="Food 13"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 14%3C/text%3E%3C/svg%3E"
+                                    alt="Food 14"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 15%3C/text%3E%3C/svg%3E"
+                                    alt="Food 15"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 16%3C/text%3E%3C/svg%3E"
+                                    alt="Food 16"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 17%3C/text%3E%3C/svg%3E"
+                                    alt="Food 17"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 18%3C/text%3E%3C/svg%3E"
+                                    alt="Food 18"></div>
+                            <!-- duplicate for seamless loop -->
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 9%3C/text%3E%3C/svg%3E"
+                                    alt="Food 9"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 10%3C/text%3E%3C/svg%3E"
+                                    alt="Food 10"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 11%3C/text%3E%3C/svg%3E"
+                                    alt="Food 11"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 12%3C/text%3E%3C/svg%3E"
+                                    alt="Food 12"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 13%3C/text%3E%3C/svg%3E"
+                                    alt="Food 13"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 14%3C/text%3E%3C/svg%3E"
+                                    alt="Food 14"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 15%3C/text%3E%3C/svg%3E"
+                                    alt="Food 15"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 16%3C/text%3E%3C/svg%3E"
+                                    alt="Food 16"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 17%3C/text%3E%3C/svg%3E"
+                                    alt="Food 17"></div>
+                            <div class="food-carousel-item"><img
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Crect fill='%23e8e8e8' width='220' height='160'/%3E%3Ctext fill='%23aaa' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14'%3EFood 18%3C/text%3E%3C/svg%3E"
+                                    alt="Food 18"></div>
+                        </div>
+                    </div>
+                    <!-- <p class="food-carousel-scroll-hint" aria-hidden="true">Scroll for more</p> -->
+                </div>
+
+                <button type="button" class="enquiry-button catering-enquiry-button" aria-controls="enquiry-form">
+                    <img src="./Images/Enquiry-button-icon.svg" class="enquiry-button-icon" alt="Enquiry button icon">
+                    <span>Enquiry</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== Footer section ========================================== -->
+    <footer class="footer-section">
+        <section class="footer-content-container">
+            <div class="footer-brand">
+                <img src="./Images/PF-logo-Color/pfLogo_L.png" class="footer-logo" alt="Punkfrog logo">
+
+            </div>
+
+            <div class="footer-contact-container">
+                <div class="footer-contact">
+                    <div class="footer-contact-icon-box">
+                        <img src="./Images/footer-icon/locaion-icon.svg" class="footer-contact-icon" alt="Location">
+                    </div>
+                    <span class="footer-contact-text">Stockholm, Sweden</span>
+                </div>
+                <div class="footer-contact">
+                    <div class="footer-contact-icon-box">
+                        <img src="./Images/footer-icon/business-reg.svg" class="footer-contact-icon"
+                            alt="Business registration">
+                    </div>
+                    <span class="footer-contact-text">Business Registration: 559196-0207</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-separator" aria-hidden="true"></div>
+
+        <section class="footer-copyright-container">
+            <span class="footer-copyright-text">© 2019 Punkfrog. All rights reserved</span>
+            <span class="footer-designer">Web designed by Laura Lundin</span>
+        </section>
+    </footer>
+
+    <div class="back-to-top-button">
+        <a href="#hero-section">
+
+            <span>🔝</span>
+        </a>
     </div>
 
-    <!-- Technical Services section -->
-    <div class="services-section">
-        </div>
-
-    <!-- BusinessConsulting section -->
-     <div class="consulting-section"></div>
-
-    <!-- Catering section -->
-    <div class="catering-section"></div>
-
-    <!-- Production section -->
-    <div class="production-section">
-        <h2>PunkFrog Productions</h2>
-    </div>
-
-    <!-- Footer section -->
-    <div class="footer-section"></div>
-         
+    <script src="./script.js"></script>
 </body>
+
 </html>
