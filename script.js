@@ -23,8 +23,10 @@ document.getElementById("close-enquiry-form")?.addEventListener("click", () => {
   items.forEach((item) => {
     item.addEventListener("mouseenter", () => {
       const title = item.dataset.panelTitle || "";
-      const entries = (item.dataset.panelItems || "")
-        .split(",")
+      const raw = item.dataset.panelItems || "";
+      const separator = raw.includes("|") ? "|" : ",";
+      const entries = raw
+        .split(separator)
         .map((s) => s.trim())
         .filter(Boolean);
       panelTitle.textContent = title;
