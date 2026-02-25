@@ -260,9 +260,9 @@ main .enquiry-button:not(.catering-enquiry-button) {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-.tech-service-icon-container:hover {
+/* .tech-service-icon-container:hover {
   transform: scale(1.05);
-}
+} */
 
 .tech-service-icon-container[aria-label="Riak"] {
   background: #f2f4f7;
