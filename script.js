@@ -1,4 +1,4 @@
-// Enquiry button: open and closeenquiry form
+// Enquiry button: open and close enquiry form
 document.querySelectorAll(".enquiry-button").forEach((btn) => {
   btn.addEventListener("click", () => {
     window.location.href = "./enquiry-form.html";
@@ -44,6 +44,58 @@ document.getElementById("close-enquiry-form")?.addEventListener("click", () => {
   });
 })();
 
+// Production: hover item → show slide-in panel with img and content; leave layout → hide panel
+(function () {
+  const section = document.getElementById("production-section");
+  const layout = document.querySelector(".production-layout");
+  const panel = document.getElementById("production-detail-panel");
+  const panelImg = document.getElementById("production-panel-img");
+  const panelTitle = document.getElementById("production-panel-title");
+  const panelDescription = document.getElementById(
+    "production-panel-description",
+  );
+  const panelLinkWrap = document.getElementById("production-panel-link-wrap");
+  const panelLink = document.getElementById("production-panel-link");
+  const items = document.querySelectorAll(".production-item");
+
+  if (!panel || !panelTitle || !panelDescription || !layout) return;
+
+  items.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      const img = item.querySelector("img");
+      const title = item.dataset.productionTitle || "";
+      const description = item.dataset.productionDescription || "";
+      const linkUrl = (item.dataset.productionLink || "").trim();
+      const linkLabel = (item.dataset.productionLinkLabel || "").trim();
+
+      if (panelImg) {
+        panelImg.src = img ? img.src : "";
+        panelImg.alt = img ? img.alt : "";
+      }
+      panelTitle.textContent = title;
+      panelDescription.textContent = description;
+
+      if (linkUrl && panelLinkWrap && panelLink) {
+        panelLink.href = linkUrl;
+        panelLink.textContent = linkLabel ? `${linkLabel} ${linkUrl}` : linkUrl;
+        panelLinkWrap.style.display = "";
+      } else if (panelLinkWrap) {
+        panelLinkWrap.style.display = "none";
+      }
+
+      panel.classList.add("is-visible");
+      panel.setAttribute("aria-hidden", "false");
+      if (section) section.classList.add("layout-panel-active");
+    });
+  });
+
+  layout.addEventListener("mouseleave", () => {
+    panel.classList.remove("is-visible");
+    panel.setAttribute("aria-hidden", "true");
+    if (section) section.classList.remove("layout-panel-active");
+  });
+})();
+
 // Frameworks: button toggles expand/collapse of the full frameworks table
 (function () {
   const wrapper = document.getElementById("frameworks-wrapper");
@@ -58,73 +110,15 @@ document.getElementById("close-enquiry-form")?.addEventListener("click", () => {
     trigger.setAttribute("aria-expanded", String(isExpanded));
     trigger.setAttribute(
       "aria-label",
-      isExpanded ? "Hide frameworks table" : "Show frameworks table",
+      isExpanded
+        ? "Hide frameworks and templates table"
+        : "Show frameworks and templates table",
     );
     content.setAttribute("aria-hidden", String(!isExpanded));
     if (triggerText)
-      triggerText.textContent = isExpanded ? "Hide frameworks" : "Frameworks";
-  });
-})();
-
-// Production section: popup modal
-(function () {
-  const overlay = document.getElementById("production-popup-overlay");
-  const closeBtn = document.getElementById("production-popup-close");
-  const popupImg = document.getElementById("production-popup-img");
-  const popupTitle = document.getElementById("production-popup-title");
-  const popupDescription = document.getElementById(
-    "production-popup-description",
-  );
-  const popupLinkWrap = document.getElementById("production-popup-link-wrap");
-  const popupLink = document.getElementById("production-popup-link");
-
-  const cards = document.querySelectorAll(".production-content");
-
-  function openPopup(card) {
-    const img = card.querySelector("img");
-    const title = card.dataset.productionTitle || "";
-    const description = card.dataset.productionDescription || "";
-    const linkUrl = (card.dataset.productionLink || "").trim();
-    const linkLabel = (card.dataset.productionLinkLabel || "").trim();
-
-    popupImg.src = img ? img.src : "";
-    popupImg.alt = img ? img.alt : "";
-    popupTitle.textContent = title;
-    popupDescription.textContent = description;
-
-    if (linkUrl && popupLinkWrap && popupLink) {
-      popupLink.href = linkUrl;
-      popupLink.textContent = linkLabel ? `${linkLabel} ${linkUrl}` : linkUrl;
-      popupLinkWrap.style.display = "";
-    } else if (popupLinkWrap) {
-      popupLinkWrap.style.display = "none";
-    }
-
-    overlay.classList.add("is-visible");
-    overlay.setAttribute("aria-hidden", "false");
-  }
-
-  function closePopup() {
-    overlay.classList.remove("is-visible");
-    overlay.setAttribute("aria-hidden", "true");
-  }
-
-  if (!overlay) return;
-
-  cards.forEach((card) => {
-    card.addEventListener("click", () => openPopup(card));
-  });
-
-  closeBtn?.addEventListener("click", closePopup);
-
-  overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) closePopup();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && overlay.classList.contains("is-visible")) {
-      closePopup();
-    }
+      triggerText.textContent = isExpanded
+        ? "Hide Frameworks & Templates"
+        : "Frameworks & Templates";
   });
 })();
 
