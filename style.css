@@ -37,7 +37,7 @@ li {
   letter-spacing: 0.7px;
 }
 
-/* ========== Section title container ========== */
+/* ========== Section title container =========*/
 .section-title-container {
   display: flex;
   flex-direction: column;
