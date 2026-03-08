@@ -9,7 +9,7 @@ document.getElementById("close-enquiry-form")?.addEventListener("click", () => {
   window.location.href = "./index.html";
 });
 
-// Business Consulting: hover item → show panel; leave layout → hide panel
+// Business Consulting panel function
 (function () {
   const section = document.getElementById("business-consulting-section");
   const layout = document.querySelector(".business-consulting-layout");
@@ -20,8 +20,14 @@ document.getElementById("close-enquiry-form")?.addEventListener("click", () => {
 
   if (!panel || !panelTitle || !panelList || !layout) return;
 
+  function closeConsultingPanel() {
+    panel.classList.remove("is-visible");
+    panel.setAttribute("aria-hidden", "true");
+    if (section) section.classList.remove("layout-panel-active");
+  }
+
   items.forEach((item) => {
-    item.addEventListener("mouseenter", () => {
+    item.addEventListener("click", () => {
       const title = item.dataset.panelTitle || "";
       const raw = item.dataset.panelItems || "";
       const separator = raw.includes("|") ? "|" : ",";
@@ -37,14 +43,12 @@ document.getElementById("close-enquiry-form")?.addEventListener("click", () => {
     });
   });
 
-  layout.addEventListener("mouseleave", () => {
-    panel.classList.remove("is-visible");
-    panel.setAttribute("aria-hidden", "true");
-    if (section) section.classList.remove("layout-panel-active");
-  });
+  document
+    .getElementById("consulting-panel-close")
+    ?.addEventListener("click", closeConsultingPanel);
 })();
 
-// Production: hover item → show slide-in panel with img and content; leave layout → hide panel
+// Production panel function
 (function () {
   const section = document.getElementById("production-section");
   const layout = document.querySelector(".production-layout");
@@ -58,10 +62,24 @@ document.getElementById("close-enquiry-form")?.addEventListener("click", () => {
   const panelLink = document.getElementById("production-panel-link");
   const items = document.querySelectorAll(".production-item");
 
-  if (!panel || !panelTitle || !panelDescription || !layout) return;
+  const container = document.querySelector(".production-content-container");
+  const allCards = container ? container.querySelectorAll("li") : [];
+
+  function closeProductionPanel() {
+    panel.classList.remove("is-visible");
+    panel.setAttribute("aria-hidden", "true");
+    if (section) section.classList.remove("layout-panel-active");
+    allCards.forEach((el) => el.classList.remove("is-selected"));
+  }
 
   items.forEach((item) => {
-    item.addEventListener("mouseenter", () => {
+    item.addEventListener("click", () => {
+      const li = item.closest("li");
+      if (!li) return;
+
+      allCards.forEach((el) => el.classList.remove("is-selected"));
+      li.classList.add("is-selected");
+
       const img = item.querySelector("img");
       const title = item.dataset.productionTitle || "";
       const description = item.dataset.productionDescription || "";
@@ -89,14 +107,12 @@ document.getElementById("close-enquiry-form")?.addEventListener("click", () => {
     });
   });
 
-  layout.addEventListener("mouseleave", () => {
-    panel.classList.remove("is-visible");
-    panel.setAttribute("aria-hidden", "true");
-    if (section) section.classList.remove("layout-panel-active");
-  });
+  document
+    .getElementById("production-panel-close")
+    ?.addEventListener("click", closeProductionPanel);
 })();
 
-// Frameworks: button toggles expand/collapse of the full frameworks table
+// Frameworks button function
 (function () {
   const wrapper = document.getElementById("frameworks-wrapper");
   const trigger = document.getElementById("frameworks-trigger");
@@ -127,7 +143,6 @@ document.getElementById("close-enquiry-form")?.addEventListener("click", () => {
   const btn = document.getElementById("back-to-top-button");
   if (!btn) return;
 
-  // Show button after scrolling past this many viewport heights (1 = one full screen)
   const viewportHeightsThreshold = 1;
 
   function updateVisibility() {
