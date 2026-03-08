@@ -28,7 +28,9 @@ li {
 }
 
 #tech-services-section h2,
-#business-consulting-section h2 {
+#business-consulting-section h2,
+#production-section h2,
+#catering-section h2 {
   color: #4a4a5a;
   font-family: Inter;
   font-size: 48px;
@@ -254,17 +256,13 @@ main .enquiry-button:not(.catering-enquiry-button) {
   gap: 1rem;
   width: 180px;
   height: 180px;
-  border-radius: 16px;
-  border: 2px solid rgba(0, 0, 0, 0);
+  /* border-radius: 16px;
+  border: 2px solid rgba(0, 0, 0, 0); */
   cursor: pointer;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); */
 }
 
-/* .tech-service-icon-container:hover {
-  transform: scale(1.05);
-} */
-
-.tech-service-icon-container[aria-label="Riak"] {
+/* .tech-service-icon-container[aria-label="Riak"] {
   background: #f2f4f7;
 }
 
@@ -278,10 +276,10 @@ main .enquiry-button:not(.catering-enquiry-button) {
 
 .tech-service-icon-container[aria-label="Elixir"] {
   background: rgba(233, 236, 249, 0.77);
-}
+} */
 
 .tech-service-icon-container img {
-  height: 64px;
+  height: 100px;
 }
 
 .tech-service-icon-container span {
@@ -320,6 +318,10 @@ main .enquiry-button:not(.catering-enquiry-button) {
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
+}
+
+.consulting-label-center {
+  text-align: center;
 }
 
 .consulting-item {
@@ -662,13 +664,8 @@ main .enquiry-button:not(.catering-enquiry-button) {
 
 #production-section .section-title-container h2 {
   color: #e7e7e7;
-  font-family: Broadway;
-  font-size: 43px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 72px;
-  letter-spacing: 14.752px;
 }
+
 /* Only "Punkfrog" gets this color; "Productions" stays default */
 #production-section .production-title-brand {
   color: rgba(71, 71, 71, 0.85);

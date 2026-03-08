@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Punkfrog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -27,16 +31,18 @@
                             alt="Business Consulting">
                         <span>Business Consulting</span></a>
                 </li>
-                <li class="business-line">
-                    <a href="#catering-section">
-                        <img src="./Images/business-lines-icons/catering.png" class="business-line-icon" alt="Catering">
-                        <span>Celebes Catering</span></a>
-                </li>
+
                 <li class="business-line">
                     <a href="#production-section">
                         <img src="./Images/business-lines-icons/pf-production.png" class="business-line-icon"
                             alt="Production">
                         <span>Punkfrog Productions</span></a>
+                </li>
+
+                <li class="business-line">
+                    <a href="#catering-section">
+                        <img src="./Images/business-lines-icons/catering.png" class="business-line-icon" alt="Catering">
+                        <span>Celebes Catering</span></a>
                 </li>
             </ul>
         </nav>
@@ -65,19 +71,13 @@
                 <h2>Technical Services</h2>
                 <img src="./Images/section-title-underline.svg" class="section-underline" alt="Section title underline">
                 <p class="section-description">Senior experts with long, international experience in their domains.<br>
-                    We offer consultancy as well
-                    as
-                    a range of attractive services including performance tuning and flexible advisory support.
+                    We offer consultancy, as well as a range of attractive services.<br>
+
                 </p>
             </div>
             <!-- Technical services content container -->
             <div class="tech-services-content-container">
-                <li>
-                    <div class="tech-service-icon-container" aria-label="Riak">
-                        <img src="./Images/Tec-service-icons/riak-logo.png" alt="Riak logo">
-                        <span>Riak</span>
-                    </div>
-                </li>
+
                 <li>
                     <div class="tech-service-icon-container" aria-label="Erlang">
                         <img src="./Images/Tec-service-icons/erlang-logo.png" alt="Erlang logo">
@@ -87,13 +87,19 @@
                 <li>
                     <div class="tech-service-icon-container" aria-label="Rabbit MQ">
                         <img src="./Images/Tec-service-icons/rabbitMQ-logo.png" alt="Rabbit MQ logo">
-                        <span>Rabbit MQ</span>
+                        <span>RabbitMQ</span>
                     </div>
                 </li>
                 <li>
                     <div class="tech-service-icon-container" aria-label="Elixir">
                         <img src="./Images/Tec-service-icons/Elixir-logo.png" alt="Elixir logo">
                         <span>Elixir</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="tech-service-icon-container" aria-label="Riak">
+                        <img src="./Images/Tec-service-icons/riak-logo.png" alt="Riak logo">
+                        <span>Riak</span>
                     </div>
                 </li>
             </div>
@@ -120,10 +126,9 @@
             <div class="section-title-container">
                 <h2>Business Consulting</h2>
                 <img src="./Images/section-title-underline.svg" class="section-underline" alt="Section title underline">
-                <p class="section-description">Together with an international network of partners we provide a full
-                    range of business consulting services and coaching,<br> based on personal experience, exemplified by
-                    the
-                    following examples</p>
+                <p class="section-description">Together with an international network of partners,<br> we provide a full
+                    range of business consulting services and coaching based on decades of personal experience and
+                    insight.</p>
             </div>
 
             <div class="business-consulting-layout">
@@ -138,7 +143,7 @@
                             <span>Product & Market Strategy</span>
                         </div>
                     </li>
-                    <li class="consulting-item" data-panel-title="Business Analysis" data-panel-items="System specification: define needs, recommend solution
+                    <li class="consulting-item" data-panel-title="System Specification" data-panel-items="System specification: define needs, recommend solution
                         |Solution Modelling: Model-Based Software Engineering (MBSE), Computer-Aided Software Engineering (CASE)
                         |Feature Backlog:  definition & prioritisation (MDO/ECO)
                         ">
@@ -147,10 +152,11 @@
                                 <img src="./Images/Business-consulting-icons/Business-analysis.svg"
                                     alt="Business Analysis">
                             </div>
-                            <span>Business Analysis</span>
+                            <span>System Specification</span>
                         </div>
                     </li>
-                    <li class="consulting-item" data-panel-title="Sales & BD" data-panel-items="Punkfrog Sales Process & Gates™
+                    <li class="consulting-item" data-panel-title="Punkfrog Sales Process™, Sales QREF™"
+                        data-panel-items="Punkfrog Sales Process & Gates™
                     |CRM Optimisation
                     |Funnel Management & Metrics
                     |Effective Sales Pitch
@@ -161,7 +167,7 @@
                             <div class="business-consulting-icon-box">
                                 <img src="./Images/Business-consulting-icons/sales-bd.svg" alt="Sales & BD">
                             </div>
-                            <span>Sales & BD</span>
+                            <span class="consulting-label-center">Punkfrog Sales Process™<br> Sales QREF™</span>
                         </div>
                     </li>
                     <li class="consulting-item" data-panel-title="Project Management" data-panel-items="Waterfall, Agile, Hybrid
