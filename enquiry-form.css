@@ -125,22 +125,6 @@
   box-shadow: 0 0 0 2px rgba(107, 143, 113, 0.2);
 }
 
-.enquiry-form-guidance {
-  display: block;
-  margin: 0 0 0.5rem 0;
-  padding: 0.75rem 1rem;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: #2c4a2e;
-  background: #e8f0e9;
-  border: 1px solid #b8d4ba;
-  border-radius: 10px;
-}
-
-.enquiry-form-guidance strong {
-  color: #1f3d21;
-}
-
 .enquiry-send-btn {
   display: inline-flex;
   align-items: center;

@@ -51,13 +51,6 @@ document.querySelector(".enquiry-form")?.addEventListener("submit", (e) => {
     "&body=" +
     encodeURIComponent(body);
 
-  // Show guidance so user knows they must send from their email app
-  const guidance = document.getElementById("enquiry-form-guidance");
-  if (guidance) {
-    guidance.hidden = false;
-    guidance.scrollIntoView({ behavior: "smooth", block: "nearest" });
-  }
-
   window.location.href = mailto;
 });
 
