@@ -654,8 +654,8 @@ main .enquiry-button:not(.catering-enquiry-button) {
 }
 
 .production-content img {
-  width: 250px;
-  height: 350px;
+  width: 230px;
+  height: 330px;
   border-radius: 25px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
@@ -1226,8 +1226,8 @@ html.scroll-smooth {
   }
 
   .production-content img {
-    width: 180px;
-    height: 252px;
+    width: 165px;
+    height: 250px;
     max-width: 100%;
   }
 
