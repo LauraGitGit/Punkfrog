@@ -1,4 +1,4 @@
-// Enquiry button: open and closeenquiry form
+// Enquiry button
 document.querySelectorAll(".enquiry-button").forEach((btn) => {
   btn.addEventListener("click", () => {
     window.location.href = "./enquiry-form.html";
