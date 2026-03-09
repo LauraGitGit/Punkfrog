@@ -725,11 +725,16 @@ main .enquiry-button:not(.catering-enquiry-button) {
 .production-panel-img {
   width: 100%;
   max-width: 180px;
-  max-height: 230px;
-  object-fit: fill;
+  aspect-ratio: 5 / 7;
+  object-fit: cover;
+  object-position: center;
   border-radius: 12px;
   flex-shrink: 0;
   display: block;
+}
+
+.production-panel-img.production-panel-img--jan {
+  object-position: 28% 50%;
 }
 
 .production-panel-title {
@@ -1232,6 +1237,11 @@ html.scroll-smooth {
     width: 180px;
     height: 252px;
     max-width: 100%;
+  }
+
+  .production-content-container li:nth-child(2) img {
+    object-position: 16% 50%;
+    object-fit: cover;
   }
 
   .production-detail-panel {

@@ -99,6 +99,12 @@ document.getElementById("close-enquiry-form")?.addEventListener("click", () => {
       if (panelImg) {
         panelImg.src = img ? img.src : "";
         panelImg.alt = img ? img.alt : "";
+
+        if (item.classList.contains("production-content--jan")) {
+          panelImg.classList.add("production-panel-img--jan");
+        } else {
+          panelImg.classList.remove("production-panel-img--jan");
+        }
       }
       panelTitle.textContent = title;
       panelDescription.textContent = description;
