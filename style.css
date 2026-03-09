@@ -743,6 +743,7 @@ main .enquiry-button:not(.catering-enquiry-button) {
 }
 
 .production-panel-subtitle {
+  font-style: italic;
   margin: 0 0 0.75rem 0;
   padding: 0;
   font-size: 0.8rem;
