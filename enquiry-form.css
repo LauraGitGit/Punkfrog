@@ -153,12 +153,10 @@
   flex-shrink: 0;
 }
 
-/* ========== Responsive: enquiry form ========== */
 @media (max-width: 480px) {
   .enquiry-form-page {
-    padding: 1rem;
+    padding: 6rem 1rem 0 1rem;
     align-items: flex-start;
-    padding-top: 3rem;
   }
 
   .close-enquiry-btn {
@@ -175,7 +173,6 @@
 
   .enquiry-form-card-inner {
     padding: 1.5rem 1.25rem;
-    margin: 10px;
   }
 
   .enquiry-form-logo {
