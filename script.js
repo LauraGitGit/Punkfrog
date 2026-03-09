@@ -201,7 +201,7 @@ document.querySelector(".enquiry-form")?.addEventListener("submit", (e) => {
   });
 })();
 
-// Back to top: show button only after user scrolls past a certain level
+// Back to top
 (function () {
   const btn = document.getElementById("back-to-top-button");
   if (!btn) return;
@@ -222,6 +222,52 @@ document.querySelector(".enquiry-form")?.addEventListener("submit", (e) => {
 
   window.addEventListener("scroll", updateVisibility, { passive: true });
   updateVisibility();
+})();
+
+// Hamburger menu
+(function () {
+  const button = document.getElementById("hamburger-button");
+  const panel = document.getElementById("hamburger-menu-panel");
+  if (!button || !panel) return;
+
+  function openMenu() {
+    document.body.classList.add("nav-menu-open");
+    button.setAttribute("aria-expanded", "true");
+    button.setAttribute("aria-label", "Close menu");
+    panel.setAttribute("aria-hidden", "false");
+  }
+
+  function closeMenu() {
+    document.body.classList.remove("nav-menu-open");
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-label", "Open menu");
+    panel.setAttribute("aria-hidden", "true");
+  }
+
+  function toggleMenu() {
+    if (document.body.classList.contains("nav-menu-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  button.addEventListener("click", toggleMenu);
+
+  panel.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (
+      e.key === "Escape" &&
+      document.body.classList.contains("nav-menu-open")
+    ) {
+      closeMenu();
+    }
+  });
 })();
 
 // Food carousel: pause auto-scroll when user scrolls

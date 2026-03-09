@@ -1128,14 +1128,79 @@ html.scroll-smooth {
   font-size: 1.5rem;
 }
 
-/* Hide back-to-top on tablet only; show on desktop and mobile */
 @media (min-width: 768px) and (max-width: 1024px) {
   .back-to-top-button {
     display: none !important;
   }
 }
 
+/* ========== Hamburger button ========== */
+.hamburger-button {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hamburger-button:hover {
+  background: #f5f5f5;
+  border-color: rgba(0, 0, 0, 0.22);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.hamburger-bar {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+body.nav-menu-open .hamburger-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+body.nav-menu-open .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+body.nav-menu-open .hamburger-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Hamburger panel styles */
+.hamburger-menu-panel {
+  display: none;
+}
+
 @media (max-width: 1024px) {
+  .hamburger-button {
+    display: flex;
+    position: fixed;
+    top: max(1rem, env(safe-area-inset-top));
+    right: max(1rem, env(safe-area-inset-right));
+    z-index: 1002;
+  }
+
+  .hero-top-row {
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+
   #hero-section {
     gap: 4rem;
   }
@@ -1154,6 +1219,7 @@ html.scroll-smooth {
     gap: 2.5rem 3rem;
     justify-content: center;
     max-width: 500px;
+    flex-wrap: wrap;
   }
 
   .business-line {
@@ -1168,6 +1234,51 @@ html.scroll-smooth {
   .business-line-icon {
     width: 52px;
     height: 56px;
+  }
+
+  /* Hamburger dropdown */
+  .hamburger-menu-panel {
+    display: none;
+    position: fixed;
+    top: 4.5rem;
+    right: 1rem;
+    z-index: 1001;
+    width: 220px;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+  }
+
+  body.nav-menu-open .hamburger-menu-panel {
+    display: block;
+  }
+
+  .hamburger-menu-panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+
+  .hamburger-menu-panel li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .hamburger-menu-panel li:last-child {
+    border-bottom: none;
+  }
+
+  .hamburger-menu-panel a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  .hamburger-menu-panel a:hover {
+    background: rgba(0, 0, 0, 0.05);
   }
 
   #tech-services-section h2,
@@ -1310,6 +1421,7 @@ html.scroll-smooth {
 
   .production-panel-left {
     justify-content: center;
+    align-items: center;
   }
 
   .production-panel-right {
@@ -1391,15 +1503,17 @@ html.scroll-smooth {
     padding: 3rem 1rem 2rem;
   }
 
+  .hero-top-row {
+    margin-top: 1rem;
+  }
+
   #hero-section .logo {
     width: 180px;
-    margin-top: 1.5rem;
+    margin-top: 0;
   }
 
   .business-lines-container ul {
-    flex-wrap: wrap;
     gap: 1.25rem 1.5rem;
-    justify-content: center;
     max-width: 100%;
   }
 
@@ -1521,6 +1635,10 @@ html.scroll-smooth {
     font-size: 0.8rem;
   }
 
+  .frameworks-id {
+    white-space: nowrap;
+  }
+
   .production-layout {
     margin-top: 2rem;
   }
@@ -1550,7 +1668,18 @@ html.scroll-smooth {
 
   .production-detail-panel.is-visible {
     transform: translate(-50%, 0);
-    width: 95%;
+    width: 75%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .production-content img {
+    border-radius: 10px;
+  }
+
+  .production-panel-title {
+    font-size: 1rem;
   }
 
   .production-panel-right {
@@ -1559,8 +1688,13 @@ html.scroll-smooth {
 
   .production-panel-description {
     max-height: 40vh;
+    font-size: 0.9rem;
   }
 
+  .production-panel-subtitle {
+    text-align: center;
+    font-size: 0.6rem;
+  }
   .catering-title-container {
     padding: 1rem 1.25rem;
     margin-bottom: 4rem;
@@ -1601,18 +1735,8 @@ html.scroll-smooth {
     text-align: center;
     padding: 0.6rem 1rem;
   }
+}
 
-  .back-to-top-button {
-    bottom: 1rem;
-    right: 1rem;
-  }
-
-  .back-to-top-button a {
-    width: 2.75rem;
-    height: 2.75rem;
-  }
-
-  .back-to-top-button span {
-    font-size: 1.25rem;
-  }
+.back-to-top-button {
+  display: none;
 }
