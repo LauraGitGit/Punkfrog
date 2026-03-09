@@ -223,3 +223,59 @@ document.querySelector(".enquiry-form")?.addEventListener("submit", (e) => {
   window.addEventListener("scroll", updateVisibility, { passive: true });
   updateVisibility();
 })();
+
+// Food carousel: pause auto-scroll when user scrolls
+(function () {
+  const PAUSE_RESUME_DELAY_MS = 3000;
+  const tracks = document.querySelectorAll(".food-carousel-track");
+  const timeouts = new Map();
+
+  function getTranslateX(el) {
+    const style = getComputedStyle(el);
+    const t = style.transform;
+    if (!t || t === "none") return 0;
+    const m = t.match(/matrix\(([^)]+)\)/);
+    if (!m) return 0;
+    const parts = m[1].split(",").map((s) => parseFloat(s.trim()));
+    return parts.length >= 6 ? parts[4] : parts.length >= 5 ? parts[4] : 0;
+  }
+
+  tracks.forEach((track) => {
+    const inner = track.querySelector(".food-carousel-track-inner");
+    if (!inner) return;
+
+    function pauseAndSyncScroll() {
+      const alreadyPaused = inner.classList.contains(
+        "food-carousel-track-inner--user-scrolling",
+      );
+      if (!alreadyPaused) {
+        const tx = getTranslateX(inner);
+        inner.classList.add("food-carousel-track-inner--user-scrolling");
+        track.scrollLeft = track.scrollLeft + tx;
+        inner.style.transform = "none";
+      }
+
+      if (timeouts.has(inner)) clearTimeout(timeouts.get(inner));
+      timeouts.set(
+        inner,
+        setTimeout(() => {
+          track.scrollLeft = 0;
+          inner.style.transform = "";
+          inner.classList.remove("food-carousel-track-inner--user-scrolling");
+          timeouts.delete(inner);
+        }, PAUSE_RESUME_DELAY_MS),
+      );
+    }
+
+    track.addEventListener("scroll", pauseAndSyncScroll, { passive: true });
+    track.addEventListener("wheel", pauseAndSyncScroll, { passive: true });
+  });
+})();
+
+(function () {
+  document.querySelectorAll(".food-carousel-item").forEach((item) => {
+    const img = item.querySelector("img");
+    const caption = item.querySelector(".food-carousel-caption");
+    if (img && caption) caption.textContent = img.alt || "";
+  });
+})();

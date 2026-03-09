@@ -869,21 +869,44 @@ main .enquiry-button:not(.catering-enquiry-button) {
 
 .food-carousel-wrapper::before {
   left: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.25), transparent);
+  pointer-events: none;
 }
 
 .food-carousel-wrapper::after {
   right: 0;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.4), transparent);
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.25), transparent);
+  pointer-events: none;
 }
 
 .food-carousel-track {
   display: flex;
   padding: 0.5rem;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
 }
 
-/* Inner: holds duplicated items and is animated for infinite auto-scroll */
+.food-carousel-track::-webkit-scrollbar {
+  height: 8px;
+}
+
+.food-carousel-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.food-carousel-track::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+.food-carousel-track::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
 .food-carousel-track-inner {
   display: flex;
   gap: 1.25rem;
@@ -896,9 +919,15 @@ main .enquiry-button:not(.catering-enquiry-button) {
   animation: carousel-scroll-right 50s linear infinite;
 }
 
-/* Pause auto-scroll when hovering over any item in the carousel */
-.food-carousel-wrapper:hover .food-carousel-track-inner {
+/* Pause when user hovers or has just scrolled */
+.food-carousel-wrapper:hover .food-carousel-track-inner,
+.food-carousel-track-inner.food-carousel-track-inner--user-scrolling {
   animation-play-state: paused;
+}
+
+.food-carousel-track-inner.food-carousel-track-inner--user-scrolling {
+  animation: none;
+  transform: none;
 }
 
 @keyframes carousel-scroll-left {
@@ -920,8 +949,12 @@ main .enquiry-button:not(.catering-enquiry-button) {
 }
 
 .food-carousel-item {
+  position: relative;
   flex-shrink: 0;
   scroll-snap-align: center;
+  scroll-snap-stop: normal;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
 .food-carousel-item img {
@@ -939,6 +972,32 @@ main .enquiry-button:not(.catering-enquiry-button) {
 .food-carousel-item:hover img {
   transform: scale(1.08);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* Bottom overlay: dish name on hover */
+.food-carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.4));
+  opacity: 0;
+  transform: translateY(100%);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  pointer-events: none;
+  border-radius: 0 0 16px 16px;
+}
+
+.food-carousel-item:hover .food-carousel-caption {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .catering-enquiry-button {
