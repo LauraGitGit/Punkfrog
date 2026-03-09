@@ -463,7 +463,7 @@ main .enquiry-button:not(.catering-enquiry-button) {
 }
 
 .frameworks-wrapper.is-expanded .frameworks-content {
-  max-height: 1200px;
+  max-height: 1260px;
   opacity: 1;
   padding: 0 1.25rem 1.5rem;
   transition:
@@ -501,8 +501,6 @@ main .enquiry-button:not(.catering-enquiry-button) {
 .frameworks-section-header th {
   background-color: #90b98a;
   color: #fff;
-  padding: 0.75rem 1rem;
-  vertical-align: middle;
 }
 
 .frameworks-id,
@@ -531,12 +529,6 @@ main .enquiry-button:not(.catering-enquiry-button) {
   font-size: 0.85rem;
   font-weight: 400;
   opacity: 0.95;
-}
-
-.frameworks-section-header .frameworks-view-header,
-.frameworks-section-header .frameworks-download-header {
-  width: 5.5rem;
-  text-align: center;
 }
 
 .frameworks-row td {
