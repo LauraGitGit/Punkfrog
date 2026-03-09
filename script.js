@@ -82,9 +82,19 @@ document.getElementById("close-enquiry-form")?.addEventListener("click", () => {
 
       const img = item.querySelector("img");
       const title = item.dataset.productionTitle || "";
+      const subtitle = (item.dataset.productionSubtitle || "").trim();
       const description = item.dataset.productionDescription || "";
       const linkUrl = (item.dataset.productionLink || "").trim();
       const linkLabel = (item.dataset.productionLinkLabel || "").trim();
+
+      const panelSubtitle = document.getElementById(
+        "production-panel-subtitle",
+      );
+      if (panelSubtitle) {
+        panelSubtitle.textContent = subtitle;
+        panelSubtitle.hidden = !subtitle;
+        panelSubtitle.setAttribute("aria-hidden", subtitle ? "false" : "true");
+      }
 
       if (panelImg) {
         panelImg.src = img ? img.src : "";
@@ -95,7 +105,9 @@ document.getElementById("close-enquiry-form")?.addEventListener("click", () => {
 
       if (linkUrl && panelLinkWrap && panelLink) {
         panelLink.href = linkUrl;
-        panelLink.textContent = linkLabel ? `${linkLabel} ${linkUrl}` : linkUrl;
+        panelLink.textContent = linkLabel
+          ? `${linkLabel}\n${linkUrl}`
+          : linkUrl;
         panelLinkWrap.style.display = "";
       } else if (panelLinkWrap) {
         panelLinkWrap.style.display = "none";

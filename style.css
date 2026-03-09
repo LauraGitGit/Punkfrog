@@ -13,6 +13,7 @@ body {
 }
 
 li {
+  padding: 2px;
   list-style: none;
 }
 
@@ -66,7 +67,7 @@ li {
 
 /* ========== Vector wave separator (hero → tech services) ========== */
 .wave-separator-1 {
-  margin-top: -3px;
+  margin-top: -2px;
   background-color: #eef7e0;
 }
 
@@ -79,30 +80,30 @@ li {
 /* ========== Vector wave separator (tech services → business consulting) ========== */
 .wave-separator-2 {
   background-color: #d2dcb6;
-  margin-top: -8.5px;
+  margin-top: -1px;
 }
 
 .wave-separator-shape-2 {
   display: block;
   width: 100%;
-  height: 58px;
+  height: 44px;
 }
 
 /* ========== Vector wave separator (business consulting → production) ========== */
 .wave-separator-3 {
-  margin-top: -7px;
+  margin-top: -8px;
   background-color: #a1bc98;
 }
 
 .wave-separator-shape-3 {
   display: block;
   width: 100%;
-  height: 80px;
+  height: 65px;
 }
 
 /* ========== Vector wave separator (production → catering) ========== */
 .wave-separator-4 {
-  margin-top: -1px;
+  margin-top: -2px;
   position: relative;
   z-index: 2;
   margin-bottom: -2rem;
@@ -462,7 +463,7 @@ main .enquiry-button:not(.catering-enquiry-button) {
 }
 
 .frameworks-wrapper.is-expanded .frameworks-content {
-  max-height: 1000px;
+  max-height: 1200px;
   opacity: 1;
   padding: 0 1.25rem 1.5rem;
   transition:
@@ -505,6 +506,7 @@ main .enquiry-button:not(.catering-enquiry-button) {
 }
 
 .frameworks-id,
+.frameworks-view,
 .frameworks-download {
   text-align: center;
 }
@@ -531,8 +533,9 @@ main .enquiry-button:not(.catering-enquiry-button) {
   opacity: 0.95;
 }
 
+.frameworks-section-header .frameworks-view-header,
 .frameworks-section-header .frameworks-download-header {
-  width: 8rem;
+  width: 5.5rem;
   text-align: center;
 }
 
@@ -566,8 +569,17 @@ main .enquiry-button:not(.catering-enquiry-button) {
   color: #444;
 }
 
-.frameworks-download .frameworks-download-link + .frameworks-download-link {
+.frameworks-view .frameworks-download-link + .frameworks-download-link,
+.frameworks-download .frameworks-download-link + .frameworks-download-link,
+.frameworks-download
+  .frameworks-download-link
+  + span
+  + .frameworks-download-link {
   margin-left: 0.5rem;
+}
+
+.frameworks-download-link-download {
+  font-size: 0.75rem;
 }
 
 .frameworks-download-link {
@@ -691,6 +703,7 @@ main .enquiry-button:not(.catering-enquiry-button) {
 }
 
 .production-detail-panel.is-visible {
+  width: 80%;
   transform: translateX(0);
   opacity: 1;
   visibility: visible;
@@ -729,6 +742,16 @@ main .enquiry-button:not(.catering-enquiry-button) {
   line-height: 1.2;
 }
 
+.production-panel-subtitle {
+  margin: 0 0 0.75rem 0;
+  padding: 0;
+  font-size: 0.8rem;
+  color: #1f2a1c;
+  white-space: pre-line;
+  line-height: 1.35;
+  margin-bottom: 2rem;
+}
+
 .production-panel-description {
   font-size: 1rem;
   text-align: left;
@@ -736,24 +759,28 @@ main .enquiry-button:not(.catering-enquiry-button) {
   white-space: pre-line;
 }
 
-.production-panel-link {
-  display: inline-block;
-  padding: 0.6rem 1rem;
+.production-detail-panel .production-panel-link {
+  display: block;
+  padding: 0.9rem 2rem;
+  float: left;
   background: #5f6d5c;
   color: #fff;
   font-size: 0.85rem;
   text-decoration: none;
   border-radius: 20px;
+  white-space: pre-line;
+  text-align: center;
   transition:
     background 0.2s ease,
     color 0.2s ease;
 }
 
-.production-panel-link-wrap {
-  margin: 2rem 0;
-}
-.production-panel-link:hover {
+.production-detail-panel .production-panel-link:hover {
   background: #4a5548;
+}
+
+.production-detail-panel .production-panel-link-wrap {
+  margin: 2rem 0;
 }
 
 /* ========== Catering section styles ========== */
@@ -808,15 +835,6 @@ main .enquiry-button:not(.catering-enquiry-button) {
   margin: 0;
 }
 
-.catering-headline-celebes {
-  font-weight: 500;
-  letter-spacing: 0.06em;
-}
-
-.catering-headline-catering {
-  letter-spacing: 0.12em;
-}
-
 .catering-underline {
   margin-top: 1.2rem;
 }
@@ -825,7 +843,7 @@ main .enquiry-button:not(.catering-enquiry-button) {
   color: rgb(255 244 236 / 95%);
   font-size: clamp(0.9rem, 2vw, 1.05rem);
   margin: 1rem 0 0;
-  max-width: 420px;
+  max-width: 575px;
   text-align: center;
 }
 
@@ -1048,9 +1066,15 @@ html.scroll-smooth {
   font-size: 1.5rem;
 }
 
+/* Hide back-to-top on tablet only; show on desktop and mobile */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .back-to-top-button {
+    display: none !important;
+  }
+}
+
 @media (max-width: 1024px) {
   #hero-section {
-    padding: 3rem 1.5rem;
     gap: 4rem;
   }
 
@@ -1140,7 +1164,7 @@ html.scroll-smooth {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem 2.5rem;
     width: 100%;
-    max-width: 640px;
+    max-width: 500px;
     justify-items: center;
   }
 
@@ -1151,21 +1175,24 @@ html.scroll-smooth {
 
   .business-consulting-detail-panel {
     position: relative;
-    right: auto;
     width: 100%;
     max-width: 560px;
-    margin-top: 1.5rem;
-    transform: none;
-    visibility: visible;
-    opacity: 0;
+    padding: 0;
+    min-height: 0;
+    visibility: hidden;
     max-height: 0;
+    overflow: hidden;
     transition:
       opacity 0.3s ease,
-      max-height 0.35s ease;
-    z-index: 1;
+      max-height 0.35s ease,
+      margin 0.3s ease,
+      padding 0.3s ease;
   }
 
   .business-consulting-detail-panel.is-visible {
+    margin-top: 1.5rem;
+    padding: 1.5rem 1.75rem;
+    visibility: visible;
     opacity: 1;
     max-height: 420px;
     overflow-y: auto;
@@ -1178,9 +1205,9 @@ html.scroll-smooth {
   .frameworks-wrapper {
     margin-left: 1rem;
     margin-right: 1rem;
-    width: calc(100% - 2rem);
-    max-width: 920px;
-    box-sizing: border-box;
+    width: calc(89% - 3rem);
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 
   .frameworks-table {
@@ -1206,9 +1233,39 @@ html.scroll-smooth {
     max-width: 100%;
   }
 
-  /* Keep panel on the right and sliding in from the right on tablet */
   .production-detail-panel {
-    width: 320px;
+    width: 70%;
+    gap: 2rem;
+    align-items: stretch;
+    overflow: hidden;
+    max-height: 100vh;
+  }
+
+  .production-panel-left {
+    justify-content: center;
+  }
+
+  .production-panel-right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    justify-content: center;
+  }
+
+  .production-panel-description {
+    flex: 0 1 auto;
+    max-height: 55vh;
+    min-height: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .production-panel-right .production-panel-link-wrap {
+    flex-shrink: 0;
+    text-align: center;
   }
 
   .production-detail-panel.is-visible {
