@@ -1,12 +1,64 @@
 // Enquiry button
 document.querySelectorAll(".enquiry-button").forEach((btn) => {
   btn.addEventListener("click", () => {
+    let targetEmail = "enquiry@punkfrog.se";
+
+    // Celebes Catering button uses its own address
+    if (btn.classList.contains("catering-enquiry-button")) {
+      targetEmail = "celebes@punkfrog.se";
+    }
+
+    try {
+      sessionStorage.setItem("pf_enquiry_email", targetEmail);
+    } catch (e) {}
+
     window.location.href = "./enquiry-form.html";
   });
 });
 
 document.getElementById("close-enquiry-form")?.addEventListener("click", () => {
   window.location.href = "./index.html";
+});
+
+// Enquiry form submission
+document.querySelector(".enquiry-form")?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const name = (form.querySelector("#name")?.value || "").trim();
+  const email = (form.querySelector("#email")?.value || "").trim();
+  const subject = (form.querySelector("#subject")?.value || "").trim();
+  const message = (form.querySelector("#message")?.value || "").trim();
+
+  const subjectLine = subject || "Enquiry from Punkfrog website";
+  const body =
+    (name ? `Name: ${name}\n` : "") +
+    (email ? `Email: ${email}\n\n` : "") +
+    (message ? message : "");
+
+  let toAddress = "enquiry@punkfrog.se";
+  try {
+    const stored = sessionStorage.getItem("pf_enquiry_email");
+    if (stored) {
+      toAddress = stored;
+    }
+  } catch (e) {}
+
+  const mailto =
+    "mailto:" +
+    encodeURIComponent(toAddress) +
+    "?subject=" +
+    encodeURIComponent(subjectLine) +
+    "&body=" +
+    encodeURIComponent(body);
+
+  // Show guidance so user knows they must send from their email app
+  const guidance = document.getElementById("enquiry-form-guidance");
+  if (guidance) {
+    guidance.hidden = false;
+    guidance.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  window.location.href = mailto;
 });
 
 // Business Consulting panel function
