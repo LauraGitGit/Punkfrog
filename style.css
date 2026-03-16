@@ -308,7 +308,7 @@ main .enquiry-button:not(.catering-enquiry-button) {
 /* Slide-in detail panel  */
 .business-consulting-detail-panel {
   position: absolute;
-  right: 0;
+  right: -78px;
   width: 320px;
   min-height: 150px;
   padding: 1.5rem 1.75rem;
@@ -716,7 +716,6 @@ main .enquiry-button:not(.catering-enquiry-button) {
 .production-panel-img {
   width: 100%;
   max-width: 180px;
-  aspect-ratio: 5 / 7;
   object-fit: cover;
   object-position: center;
   border-radius: 12px;
@@ -725,6 +724,7 @@ main .enquiry-button:not(.catering-enquiry-button) {
 }
 
 .production-panel-img.production-panel-img--jan {
+  aspect-ratio: 5 / 7;
   object-position: 28% 50%;
 }
 
@@ -747,19 +747,19 @@ main .enquiry-button:not(.catering-enquiry-button) {
   white-space: pre-line;
   line-height: 1.35;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .production-panel-description {
   font-size: 1rem;
-  text-align: left;
+  margin: 0 2rem;
   color: #1f2a1c;
   white-space: pre-line;
 }
 
 .production-detail-panel .production-panel-link {
-  display: block;
+  display: inline-block;
   padding: 0.9rem 2rem;
-  float: left;
   background: #5f6d5c;
   color: #fff;
   font-size: 0.85rem;
@@ -778,6 +778,7 @@ main .enquiry-button:not(.catering-enquiry-button) {
 
 .production-detail-panel .production-panel-link-wrap {
   margin: 2rem 0;
+  text-align: center;
 }
 
 /* ========== Catering section styles ========== */
@@ -1030,6 +1031,29 @@ footer {
   margin-right: 7rem;
 }
 
+.footer-enquiry-text {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+}
+
+.footer-enquiry-text a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-enquiry-text a:hover {
+  text-decoration: underline;
+}
+
+.email-link {
+  color: white;
+  transition: color 0.3s ease;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
 /* Contact row */
 .footer-contact-container {
   display: flex;
@@ -1191,8 +1215,8 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
   .hamburger-button {
     display: flex;
     position: fixed;
-    top: max(1rem, env(safe-area-inset-top));
-    right: max(1rem, env(safe-area-inset-right));
+    top: 5px;
+    right: 20px;
     z-index: 1002;
   }
 
@@ -1269,8 +1293,10 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
   }
 
   .hamburger-menu-panel a {
-    display: block;
-    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 1rem;
     text-decoration: none;
     color: #1a1a1a;
     font-weight: 500;
@@ -1347,6 +1373,7 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
   }
 
   .business-consulting-detail-panel {
+    right: 0;
     position: relative;
     width: 100%;
     max-width: 560px;
@@ -1424,6 +1451,11 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
     align-items: center;
   }
 
+  .production-panel-img {
+    width: 100%;
+    max-width: 120px;
+  }
+
   .production-panel-right {
     width: 60%;
     display: flex;
@@ -1436,7 +1468,6 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
 
   .production-panel-description {
     flex: 0 1 auto;
-    max-height: 55vh;
     min-height: 0;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -1480,7 +1511,7 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
   }
 
   .footer-content-container {
-    gap: 2rem;
+    gap: 10rem;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -1556,6 +1587,14 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
     padding: 1.5rem 1rem;
   }
 
+  .section-underline {
+    margin-top: -0.3rem;
+  }
+
+  .section-underline.catering-underline {
+    margin-top: 9px;
+  }
+
   #tech-services-section {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -1604,6 +1643,10 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
     padding: 1.25rem 1.25rem;
     max-height: 70vh;
     width: 90%;
+  }
+
+  .business-consulting-detail-panel {
+    right: 0;
   }
 
   .consulting-panel-title {
@@ -1682,13 +1725,18 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
     font-size: 1rem;
   }
 
+  .production-panel-link {
+    float: none;
+  }
+
   .production-panel-right {
     width: 100%;
   }
 
   .production-panel-description {
-    max-height: 40vh;
+    max-height: 32vh;
     font-size: 0.9rem;
+    margin: 0 1rem;
   }
 
   .production-panel-subtitle {
@@ -1728,15 +1776,32 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
     gap: 1rem;
   }
 
+  .footer-contact-icon-box {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+  }
+
+  .footer-contact-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .footer-contact-text {
+    font-size: 0.85rem;
+  }
+
   .footer-copyright-container {
     flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
     text-align: center;
     padding: 0.6rem 1rem;
   }
-}
 
-.back-to-top-button {
-  display: none;
+  .footer-logo {
+    width: 150px;
+  }
+
+  .back-to-top-button {
+    display: none;
+  }
 }
