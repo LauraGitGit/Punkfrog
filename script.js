@@ -85,6 +85,9 @@
       panel.classList.add("is-visible");
       panel.setAttribute("aria-hidden", "false");
       if (section) section.classList.add("layout-panel-active");
+      setTimeout(() => {
+        panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }, 50);
     });
   });
 
