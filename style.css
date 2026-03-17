@@ -1216,7 +1216,7 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
     display: flex;
     position: fixed;
     top: 5px;
-    right: 20px;
+    right: 5px;
     z-index: 1002;
   }
 
@@ -1240,10 +1240,9 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
 
   .business-lines-container ul {
     display: flex;
-    gap: 2.5rem 3rem;
+    gap: 2.5rem 6rem;
     justify-content: center;
     max-width: 500px;
-    flex-wrap: wrap;
   }
 
   .business-line {
@@ -1529,7 +1528,7 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
 /* ========== Mobile ========== */
 @media (max-width: 767px) {
   #hero-section {
-    gap: 2.5rem;
+    gap: 1rem;
     padding: 3rem 1rem 2rem;
   }
 
@@ -1539,7 +1538,14 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
 
   #hero-section .logo {
     width: 180px;
-    margin-top: 0;
+    margin-top: 15px;
+  }
+
+  .hamburger-button {
+    width: 38px;
+    height: 38px;
+    padding: 8px;
+    border: none;
   }
 
   .business-lines-container ul {
@@ -1548,7 +1554,7 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
   }
 
   .business-line {
-    max-width: 140px;
+    max-width: 172px;
   }
 
   .business-line-icon {
@@ -1558,6 +1564,7 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
 
   .business-line a {
     font-size: 0.9rem;
+    padding: 0.8rem;
   }
 
   main .enquiry-button:not(.catering-enquiry-button) {
@@ -1578,8 +1585,7 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
   #business-consulting-section h2,
   #production-section h2,
   #catering-section h2 {
-    font-size: 28px;
-    line-height: 1.25;
+    font-size: 1.5rem;
   }
 
   .section-title-container {
@@ -1587,15 +1593,20 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
   }
 
   .section-underline {
-    margin-top: -0.3rem;
+    margin-top: -0.5rem;
+    height: 2px;
   }
 
   .section-underline.catering-underline {
     margin-top: 9px;
   }
 
+  .section-description {
+    font-size: 0.8rem;
+  }
+
   #tech-services-section {
-    gap: 0;
+    gap: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -1625,7 +1636,7 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
   }
 
   .business-consulting-layout {
-    padding: 1rem;
+    margin-top: 2rem;
   }
 
   .business-consulting-content-container {
@@ -1718,8 +1729,8 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
   }
 
   .production-content img {
-    width: 105px;
-    height: 185px;
+    width: 110px;
+    height: 175px;
   }
 
   #production-section.layout-panel-active .production-content-container {
