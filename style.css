@@ -1238,7 +1238,7 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
     display: flex;
     position: fixed;
     top: 5px;
-    right: 5px;
+    left: 5px;
     z-index: 1002;
   }
 
