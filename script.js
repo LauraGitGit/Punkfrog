@@ -113,38 +113,11 @@
   const container = document.querySelector(".production-content-container");
   const allCards = container ? container.querySelectorAll("li") : [];
 
-  // function preventTouchMove(e) {
-  //   if (!panel.contains(e.target)) {
-  //     e.preventDefault();
-  //   }
-  // }
-
-  // function isMobile() {
-  //   return window.innerWidth <= 767;
-  // }
-
-  // function lockBodyScroll() {
-  //   if (!isMobile()) return;
-  //   document.body.style.overflow = "hidden";
-  //   document.documentElement.style.overflow = "hidden";
-  //   document.addEventListener("touchmove", preventTouchMove, {
-  //     passive: false,
-  //   });
-  // }
-
-  // function unlockBodyScroll() {
-  //   if (!isMobile()) return;
-  //   document.body.style.overflow = "";
-  //   document.documentElement.style.overflow = "";
-  //   document.removeEventListener("touchmove", preventTouchMove);
-  // }
-
   function closeProductionPanel() {
     panel.classList.remove("is-visible");
     panel.setAttribute("aria-hidden", "true");
     if (section) section.classList.remove("layout-panel-active");
     allCards.forEach((el) => el.classList.remove("is-selected"));
-    // unlockBodyScroll();
   }
 
   items.forEach((item) => {
@@ -197,7 +170,6 @@
       panel.classList.add("is-visible");
       panel.setAttribute("aria-hidden", "false");
       if (section) section.classList.add("layout-panel-active");
-      // lockBodyScroll();
     });
   });
 
