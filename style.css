@@ -1839,8 +1839,12 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
     height: 75px;
   }
 
-  .food-carousel-caption {
+  .caption-name {
     font-size: 0.7rem;
+  }
+
+  .caption-translation {
+    font-size: 0.6rem;
   }
 
   .footer-content-container {
