@@ -1488,9 +1488,7 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
 
   .production-panel-description {
     flex: 0 1 auto;
-    min-height: 0;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+    overflow-y: visible;
   }
 
   .production-panel-right .production-panel-link-wrap {
@@ -1740,7 +1738,7 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
   }
 
   .production-content-container {
-    gap: 1.5rem;
+    gap: 0.5rem;
   }
 
   .production-content-container li {
@@ -1773,10 +1771,9 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
     width: 100%;
     transform: translateY(100%);
     border-radius: 20px 20px 0 0;
-    max-height: 90vh;
-    overflow-y: auto;
+    overflow-y: visible;
     box-sizing: border-box;
-    z-index: 100;
+    z-index: 1003;
   }
 
   .production-detail-panel.is-visible {
