@@ -87,7 +87,7 @@
       if (section) section.classList.add("layout-panel-active");
       setTimeout(() => {
         panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }, 50);
+      }, 370);
     });
   });
 
