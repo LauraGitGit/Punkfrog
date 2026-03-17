@@ -569,19 +569,6 @@ main .enquiry-button:not(.catering-enquiry-button) {
   color: #444;
 }
 
-.frameworks-view .frameworks-download-link + .frameworks-download-link,
-.frameworks-download .frameworks-download-link + .frameworks-download-link,
-.frameworks-download
-  .frameworks-download-link
-  + span
-  + .frameworks-download-link {
-  margin-left: 0.5rem;
-}
-
-.frameworks-download-link-download {
-  font-size: 0.75rem;
-}
-
 .frameworks-download-link {
   display: inline-block;
   padding: 0.25rem 0.6rem;
@@ -594,6 +581,10 @@ main .enquiry-button:not(.catering-enquiry-button) {
   transition:
     background 0.2s ease,
     transform 0.15s ease;
+}
+
+.download-link-template-mobile {
+  display: none;
 }
 
 .frameworks-download-link:hover {
@@ -1429,6 +1420,22 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
     width: calc(89% - 3rem);
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .frameworks-download {
+    display: none;
+  }
+
+  .download-link-template-mobile {
+    display: block;
+  }
+
+  .frameworks-download-header {
+    display: none;
+  }
+
+  .frameworks-download-link {
+    margin: 0.3rem;
   }
 
   .frameworks-table {
