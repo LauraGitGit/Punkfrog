@@ -113,12 +113,24 @@
   const container = document.querySelector(".production-content-container");
   const allCards = container ? container.querySelectorAll("li") : [];
 
+  function preventTouchMove(e) {
+    if (!panel.contains(e.target)) {
+      e.preventDefault();
+    }
+  }
+
   function lockBodyScroll() {
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    document.addEventListener("touchmove", preventTouchMove, {
+      passive: false,
+    });
   }
 
   function unlockBodyScroll() {
     document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+    document.removeEventListener("touchmove", preventTouchMove);
   }
 
   function closeProductionPanel() {

@@ -65,9 +65,21 @@ li {
   color: #333333cc;
 }
 
+.wave-separator-1,
+.wave-separator-2,
+.wave-separator-3,
+.wave-separator-4,
+.wave-separator-5 {
+  display: block;
+  overflow: hidden;
+  margin-top: -3px;
+  margin-bottom: -2px;
+  line-height: 0;
+  font-size: 0;
+}
+
 /* ========== Vector wave separator (hero → tech services) ========== */
 .wave-separator-1 {
-  margin-top: -2px;
   background-color: #eef7e0;
 }
 
@@ -80,7 +92,6 @@ li {
 /* ========== Vector wave separator (tech services → business consulting) ========== */
 .wave-separator-2 {
   background-color: #d2dcb6;
-  margin-top: -1px;
 }
 
 .wave-separator-shape-2 {
@@ -91,7 +102,6 @@ li {
 
 /* ========== Vector wave separator (business consulting → production) ========== */
 .wave-separator-3 {
-  margin-top: -8px;
   background-color: #a1bc98;
 }
 
@@ -103,7 +113,6 @@ li {
 
 /* ========== Vector wave separator (production → catering) ========== */
 .wave-separator-4 {
-  margin-top: -2px;
   position: relative;
   z-index: 2;
   margin-bottom: -2rem;
@@ -1033,7 +1042,7 @@ footer {
 
 .footer-enquiry-text {
   color: #e0e0e0;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .footer-enquiry-text a {
@@ -1047,7 +1056,7 @@ footer {
 }
 
 .email-link {
-  color: white;
+  color: #d0e5af;
   transition: color 0.3s ease;
   font-weight: 500;
   font-size: 0.95rem;
@@ -1734,6 +1743,10 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
     height: 175px;
   }
 
+  .production-content span {
+    font-size: 0.8rem;
+  }
+
   #production-section.layout-panel-active .production-content-container {
     max-width: 100%;
     margin-right: 0;
@@ -1795,8 +1808,7 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
     font-size: 0.6rem;
   }
   .catering-title-container {
-    padding: 1rem 1.25rem;
-    margin-bottom: 4rem;
+    padding: 0.5rem;
   }
 
   #catering-section {
@@ -1804,16 +1816,16 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
   }
 
   #catering-section .catering-headline {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
   .catering-tagline {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   .food-carousel-item img {
-    width: 120px;
-    height: 95px;
+    width: 100px;
+    height: 75px;
   }
 
   .footer-content-container {
@@ -1846,6 +1858,14 @@ body.nav-menu-open .hamburger-bar:nth-child(3) {
     flex-direction: column;
     text-align: center;
     padding: 0.6rem 1rem;
+  }
+
+  .footer-copyright-container span {
+    font-size: 0.7rem;
+  }
+
+  .footer-designer {
+    font-size: 0.7rem;
   }
 
   .footer-logo {
