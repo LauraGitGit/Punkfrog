@@ -119,7 +119,12 @@
     }
   }
 
+  function isMobile() {
+    return window.innerWidth <= 767;
+  }
+
   function lockBodyScroll() {
+    if (!isMobile()) return;
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
     document.addEventListener("touchmove", preventTouchMove, {
@@ -128,6 +133,7 @@
   }
 
   function unlockBodyScroll() {
+    if (!isMobile()) return;
     document.body.style.overflow = "";
     document.documentElement.style.overflow = "";
     document.removeEventListener("touchmove", preventTouchMove);
