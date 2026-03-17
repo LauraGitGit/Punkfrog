@@ -849,7 +849,7 @@ main .enquiry-button:not(.catering-enquiry-button) {
 .catering-tagline {
   color: rgb(255 244 236 / 95%);
   font-size: clamp(0.9rem, 2vw, 1.05rem);
-  margin: 1rem 0 0;
+  margin: 0.5rem 0 0;
   max-width: 575px;
   text-align: center;
 }
@@ -859,9 +859,8 @@ main .enquiry-button:not(.catering-enquiry-button) {
 /* Carousel container */
 .food-carousel-wrapper {
   position: relative;
-  width: 100%;
-  max-width: 100%;
-  padding-bottom: 2rem;
+  width: 60%;
+  padding-bottom: 1rem;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -968,8 +967,8 @@ main .enquiry-button:not(.catering-enquiry-button) {
 
 .food-carousel-item img {
   display: block;
-  width: 180px;
-  height: 140px;
+  width: 130px;
+  height: 120px;
   object-fit: cover;
   object-position: center;
   border-radius: 16px;
@@ -1013,6 +1012,20 @@ main .enquiry-button:not(.catering-enquiry-button) {
 .food-carousel-item:hover .food-carousel-caption {
   opacity: 1;
   transform: translateY(0);
+}
+
+.caption-name {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.caption-translation {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 400;
+  opacity: 0.85;
+  margin-top: 2px;
 }
 
 .catering-enquiry-button {

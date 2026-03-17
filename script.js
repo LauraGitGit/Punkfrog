@@ -369,6 +369,8 @@
   document.querySelectorAll(".food-carousel-item").forEach((item) => {
     const img = item.querySelector("img");
     const caption = item.querySelector(".food-carousel-caption");
-    if (img && caption) caption.textContent = img.alt || "";
+
+    if (img && caption && caption.children.length === 0)
+      caption.textContent = img.alt || "";
   });
 })();
