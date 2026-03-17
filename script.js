@@ -1,4 +1,4 @@
-// Enquiry button
+// fix later: Enquiry button
 // document.querySelectorAll(".enquiry-button").forEach((btn) => {
 //   btn.addEventListener("click", () => {
 //     let targetEmail = "enquiry@punkfrog.se";
@@ -20,7 +20,7 @@
 //   window.location.href = "./index.html";
 // });
 
-// Enquiry form submission
+// fix later: Enquiry form submission
 // document.querySelector(".enquiry-form")?.addEventListener("submit", (e) => {
 //   e.preventDefault();
 //   const form = e.target;
