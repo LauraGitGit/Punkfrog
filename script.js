@@ -113,11 +113,20 @@
   const container = document.querySelector(".production-content-container");
   const allCards = container ? container.querySelectorAll("li") : [];
 
+  function lockBodyScroll() {
+    document.body.style.overflow = "hidden";
+  }
+
+  function unlockBodyScroll() {
+    document.body.style.overflow = "";
+  }
+
   function closeProductionPanel() {
     panel.classList.remove("is-visible");
     panel.setAttribute("aria-hidden", "true");
     if (section) section.classList.remove("layout-panel-active");
     allCards.forEach((el) => el.classList.remove("is-selected"));
+    unlockBodyScroll();
   }
 
   items.forEach((item) => {
@@ -170,12 +179,29 @@
       panel.classList.add("is-visible");
       panel.setAttribute("aria-hidden", "false");
       if (section) section.classList.add("layout-panel-active");
+      lockBodyScroll();
     });
   });
 
   document
     .getElementById("production-panel-close")
     ?.addEventListener("click", closeProductionPanel);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && panel.classList.contains("is-visible")) {
+      closeProductionPanel();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (
+      panel.classList.contains("is-visible") &&
+      !panel.contains(e.target) &&
+      !e.target.closest(".production-item")
+    ) {
+      closeProductionPanel();
+    }
+  });
 })();
 
 // Frameworks button function
